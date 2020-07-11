@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>填寫入學申請表</title>
+    <meta charset="utf-8"> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script> 
+    <script src="js/form.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+
+<body>
+    <div id="container" style="box-shadow:3px 3px 12px gray;">
+    <div id="banner"> </div>
+    <div id="content1"> 
+        <img src="images/222.png" height="60" alt="填寫入學申請表">
+            
+                <form name="form1" id="form1" onsubmit="return test()" method="post" action="result.php">
+                    <table border=5 width="915" bordercolor="#00688B">
+                        <caption style="text-align:center;"> <h4><b>國立彰化師範大學外國學生來臺入學申請表<br>
+                        International Student Application Form for Admission to National Changhua University of Education</b></h4></caption>
+                        <tr><td style="padding:10px;">
+                            <label>✽擬攻讀之學位<br>Degree to be Pursued</label></td>
+                        <td style="padding:10px;" colspan="4" align="center">
+                            <input type="radio" name="op" id="op" value="學士 Bachelor"> 學士 Bachelor&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <input type="radio" name="op" id="op" value="碩士 Master"> 碩士 Master&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <input type="radio" name="op" id="op" value="博士 PhD"> 博士 PhD
+                            <span id="op_error" class="error">必選(Please Click!)</span>
+                        </td></tr>
+                        <tr><td style="padding:10px;" colspan="2"><label>✽擬申請就讀之系所班（組）別名稱<br>
+                        Department/graduate institute/program (group) you are applying</label></td>
+                        <td style="padding:10px;" colspan="3" align="center"><select size=1 name='dept' id="dept" style="word-wrap:break-word; width: 400px;">
+                            <option value=''></option>
+                        </select></td></tr>
+                        <tr><td style="padding:10px;" colspan="2"><label>✽預計入學時間<br>Term of Enrollment</label></td>
+                        <td style="padding:10px;" colspan="3" align="center"><label>107學年度第2學期入學（2019年2月）<br>Second Semester of Academic Year 2018 (February 2019)</label>
+                        </td></tr>
+                        <tr><td style="padding:10px;" colspan="2"><label>✽是否申請本校外國學生入學獎勵金？<br>Would you like to apply for International Student Enrollment Incentive?</label></td>
+                        <td style="padding:10px;" colspan="3" align="center"><input type="radio" name="bonus" value="是 Yes"> 是 Yes&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <input type="radio" name="bonus" value="不是 No"> 不是 No
+                        <span id="bonus_error" class="error"><br>必選(Please Click!)</span>
+                        </td></tr>
+                        <tr><td style="padding:10px;" colspan="5"><label>個人基本資料<br> Personal Information</label></td></tr>
+
+                        <tr><td style="padding:10px;" rowspan="2"><label>✽姓名<br>Name</label></td><td style="padding:10px;" rowspan="2" colspan="2">中文 Chinese：<input type='text' name='stud_chinese'><span id="stud_ch_error" class="error"><br>必填(Please Input!)</span><span id="stud_ch_form_error" class="error"><br>格式錯誤(Error!)</span>
+                            <br> 英文 English：  <input type='text' name='stud_english'><span id="stud_en_error" class="error"><br>必填(Please Input!)</span><span id="stud_en_form_error" class="error"><br>格式錯誤(Error!)</span><br>（與護照一致）(as appears on passport)</td> <td style="padding:10px;"><lable>✽性別<br>Gender</lable></td> <td style="padding:10px;"><input type="radio" name="gender" value="男 Male"> 男 Male &nbsp&nbsp&nbsp&nbsp
+                        <input type="radio" name="gender" value="女 Female"> 女 Female<span id="gender_error" class="error"><br>必選(Please Click!)</span></td></tr>
+                        <tr><td style="padding:10px;"><label>✽國籍<br>Nationality</label></td> <td style="padding:10px;"><input type='text' name='nationality'><span id="nation_error" class="error"><br>必填(Please Input!)</span></td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽出生日期<br>Date of Birth</label></td>
+                        <td style="padding:10px;" colspan="2">西元 <input type='text' name='year' size="2"> 年 <input type='text' name='month' size="2"> 月 <input type='text' name='day' size="2"> 日<br><label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(yyyy)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(mm)&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(dd)</label><span id="date_error" class="error"><br>必填(Please Input!)</span><span id="date_form_error" class="error"><br>格式錯誤(Error!)</span></td> 
+                        <td style="padding:10px;"><label>✽出生地點<br>Place of Birth</label></td> <td style="padding:10px;"> <input type='text' name='place'><span id="place_error" class="error"><br>必填(Please Input!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽護照號碼<br>Passport Number</label></td>
+                        <td style="padding:10px;" colspan="2"> <input type='text' name='passport'><span id="pass_error" class="error"><br>必填(Please Input!)</span><span id="pass_form_error" class="error"><br>格式錯誤(Error!)</span></td> 
+                        <td style="padding:10px;"><label>✽母語<br>Native Language</label></td> <td style="padding:10px;"> <input type='text' name='language'><span id="lan_error" class="error"><br>必填(Please Input!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽通訊地址<br>Postal Address</label></td>
+                        <td style="padding:10px;" colspan="2"> <input type='text' name='address' size="35"><span id="add_error" class="error"><br>必填(Please Input!)</span></td> 
+                        <td style="padding:10px;"><label>✽電話<br>Telephone</label></td> <td style="padding:10px;"> <input type='text' name='phone'><span id="tele_error" class="error"><br>必填(Please Input!)</span><span id="tele_form_error" class="error"><br>格式錯誤(Error!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽E-mail</label></td>
+                        <td style="padding:10px;" colspan="2"> <input type='text' name='mail' size="30"><span id="mail_error" class="error"><br>必填(Please Input!)</span><span id="mail_form_error" class="error"><br>格式錯誤(ERROR!)</span></td> 
+                        <td style="padding:10px;"><label>✽手機號碼<br>Mobile Number</label></td> <td style="padding:10px;"> <input type='text' name='cellphone'><span id="cell_error" class="error"><br>必填(Please Input!)</span><span id="cell_form_error" class="error"><br>格式錯誤(Error!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>監護人<br>Guardian</label></td>
+                        <td style="padding:10px;" colspan="4"> 姓名 Name：<input type='text' name='gd_name'><br>
+                            與申請人關係 Relationship with the Applicant：<input type='text' name='gd_relation'><br>
+                            通訊地址 Postal Address：&nbsp&nbsp<input type='text' name='gd_add'><br>
+                            聯絡電話 Contact Number：<input type='text' name='gd_phone'><br>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>在臺聯絡人<br>Contact person in Taiwan</label></td>
+                        <td style="padding:10px;" colspan="4"> 姓名 Name：<input type='text' name='tw_name'><br>
+                            與申請人關係 Relationship with the Applicant：<input type='text' name='tw_relation'><br>
+                            通訊地址 Postal Address：&nbsp&nbsp<input type='text' name='tw_add'><br>
+                            聯絡電話 Contact Number：<input type='text' name='tw_phone'><br>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;" colspan="5"><label>雙親資料<br>Information of Parents</label></td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽父親<br>Father</label></td>
+                        <td style="padding:10px;" colspan="4"> 姓名 Name：<input type='text' name='fa_name'><span id="fa_name_error" class="error">必填(Please Input!)</span><br>
+                            通訊地址 Postal Address：&nbsp&nbsp<input type='text' name='fa_add'><span id="fa_add_error" class="error">必填(Please Input!)</span><br>
+                            聯絡電話 Contact Number：<input type='text' name='fa_phone'><span id="fa_phone_error" class="error">必填(Please Input!)</span><br>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽母親<br>Mother</label></td>
+                        <td style="padding:10px;" colspan="4"> 姓名 Name：<input type='text' name='ma_name'><span id="ma_name_error" class="error">必填(Please Input!)</span><br>
+                            通訊地址 Postal Address：&nbsp&nbsp<input type='text' name='ma_add'><span id="ma_add_error" class="error">必填(Please Input!)</span><br>
+                            聯絡電話 Contact Number：<input type='text' name='ma_phone'><span id="ma_phone_error" class="error">必填(Please Input!)</span><br>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;" colspan="5"><label>教育背景<br>Educational Background</label></td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽最高學歷<br>Highest Academic Credential</label></td>
+                        <td style="padding:10px;" colspan="4"> 學校名稱 Name of School：<input type='text' name='sc_name'><span id="sc_name_error" class="error">必填(Please Input!)</span><br>
+                            學校所在地 Location of School：<input type='text' name='sc_place'><span id="sc_place_error" class="error">必填(Please Input!)</span><br>
+                            學位 Degree：<input type='text' name='sc_degree'><span id="sc_degree_error" class="error">必填(Please Input!)</span><br>
+                            畢業年月 Month and Year of Graduation：&nbsp&nbsp<input type='text' name='sc_date'><span id="sc_date_error" class="error">必填(Please Input!)</span><br>
+                            主修學門Major：&nbsp&nbsp<input type='text' name='sc_maj'><span id="sc_maj_error" class="error">必填(Please Input!)</span><br>
+                            副修學門Minor：&nbsp&nbsp<input type='text' name='sc_min'><span id="sc_min_error" class="error">必填(Please Input!)</span><br>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;" colspan="2"><label>✽敘明在臺期間各項費用來源<br>Financial resources for your stay in Taiwan</label></td>
+                        <td style="padding:10px;" colspan="3"><input type="radio" name="money" value="個人儲蓄Personal savings"> 個人儲蓄Personal savings &nbsp
+                        <input type="radio" name="money" value="父母供給Parental supports"> 父母供給Parental supports &nbsp
+                        <input type="radio" name="money" value="獎助金Incentives"> 獎助金Incentives <br>
+                        <input type="radio" name="money" value="臺灣獎學金Taiwanese Scholarships"> 臺灣獎學金Taiwanese Scholarships &nbsp
+                        <input type="radio" name="money" value="其他Others"> 其他Others &nbsp
+                        <span id="money_error" class="error"><br>必選(Please Click!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;" colspan="2"><label>✽健康狀況<br>Health Condition</label></td>
+                        <td style="padding:10px;" colspan="3"><input type="radio" name="health" value="佳 Good"> 佳 Good  &nbsp
+                        <input type="radio" name="health" value="尚可 Average"> 尚可 Average &nbsp
+                        <input type="radio" name="health" value="差Poor"> 差Poor
+                        <span id="health_error" class="error"><br>必選(Please Click!)</span> <br>
+                        如有疾病請敘明之 Please indicate the illness (if any): <br> <input type='text' name='health_describe' size="43">
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>著作（出版日期）<br>Publications (Date Published)</label></td>
+                        <td style="padding:10px;" colspan="4"> <input type='text' name='publications' size="70">
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>經歷<br>Experience</label></td>
+                        <td style="padding:10px;" colspan="4"> <input type='text' name='experience' size="70">
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>✽華語文程度<br>Proficiency of Chinese</label></td>
+                        <td style="padding:10px;" colspan="4"> 聽 Listening &nbsp&nbsp<input type="radio" name="listen" value="優 Excellent"> 優 Excellent &nbsp<input type="radio" name="listen" value="佳 Good"> 佳 Good &nbsp<input type="radio" name="listen" value="尚可 Fair"> 尚可 Fair &nbsp<input type="radio" name="listen" value="差 Poor"> 差 Poor &nbsp<input type="radio" name="listen" value="0"> 不會 Incompetent <span id="listen_error" class="error"><br>必選(Please Click!)</span><br>
+                        說 Speaking &nbsp&nbsp<input type="radio" name="speak" value="優 Excellent"> 優 Excellent &nbsp<input type="radio" name="speak" value="佳 Good"> 佳 Good &nbsp<input type="radio" name="speak" value="尚可 Fair"> 尚可 Fair &nbsp<input type="radio" name="speak" value="差 Poor"> 差 Poor &nbsp<input type="radio" name="speak" value="不會 Incompetent"> 不會 Incompetent <span id="speak_error" class="error"><br>必選(Please Click!)</span><br>
+                        讀 Reading &nbsp&nbsp&nbsp<input type="radio" name="read" value="優 Excellent"> 優 Excellent &nbsp<input type="radio" name="read" value="佳 Good"> 佳 Good &nbsp<input type="radio" name="read" value="尚可 Fair"> 尚可 Fair &nbsp<input type="radio" name="read" value="差 Poor"> 差 Poor &nbsp<input type="radio" name="read" value="不會 Incompetent"> 不會 Incompetent<span id="read_error" class="error"><br>必選(Please Click!)</span><br>
+                        寫 Writing &nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" name="write" value="優 Excellent"> 優 Excellent &nbsp<input type="radio" name="write" value="佳 Good"> 佳 Good &nbsp<input type="radio" name="write" value="尚可 Fair"> 尚可 Fair &nbsp<input type="radio" name="write" value="差 Poor"> 差 Poor &nbsp<input type="radio" name="write" value="不會 Incompetent"> 不會 Incompetent <span id="write_error" class="error"><br>必選(Please Click!)</span><br>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;" colspan="5"><label>✽曾學習（研究）華語文幾年？<br>How many years have you learned (studied) Chinese? </label>&nbsp&nbsp&nbsp
+                        <input type='text' name='learn_ch' size="10"><span id="learn_ch_error" class="error">必填(Please Input!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;" colspan="5"><label>✽學習華語文環境（高中、大學或語文機構）及受何人指導（講授）？<br>Where did you study Chinese (High School, College or Language Institute) and who was the instructor?</label><br>
+                        &nbsp&nbsp&nbsp<input type='text' name='ch_instructor' size="70"><span id="ch_instructor_error" class="error">必填(Please Input!)</span>
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>課外活動<br>Extracurricular Activities</label></td>
+                        <td style="padding:10px;" colspan="4"><input type='text' name='activity' size="70">
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>審查資料上傳<br>Upload Documents</label></td>
+                        <td style="padding:10px;" colspan="4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type='button' value="開啟檔案上傳頁面" onClick="window.open('UploadFile.html');">
+                            <br>Open the page for document upload
+                        </td></tr>
+
+                        <tr><td style="padding:10px;"><label>備註<br>Remarks</label></td>
+                        <td style="padding:10px;" colspan="4"><label><ol>
+                            <li>入學申請表內各項資料請據實填寫，所填通訊地址及E-mail應清楚完整，以利本校寄發入學通知。<br>
+                            Please fill in the Application Form with accurate information. The postal address and the E-Mail have to be clear and complete for the purpose of sending the admission notice.</li><br>
+                            <li><span style="color:red;">審查資料上傳部分，無須於填寫基本資料時一併上傳，可於基本資料填妥後，再至「網路報名」→「修改報名資料」上傳審查資料。<br>
+                            Documents for review need not be uploaded at the time of filling in the basic information. Applicants may enter the “Online Application” section → “Edit Application” to upload the documents after completing the basic information.</span></li><br>
+                            <li>請申請人詳閱招生簡章各項規定。<br>
+                            Applicants are required to read all regulations provided in the Admission Brochure.</li><br>
+                            <li>國立彰化師範大學為辦理外國學生申請入學報名審查之目的，本表所蒐集之個人資訊，將僅存放於校內，作為外國學生申請入學報名審查管理與聯繫之用，學校將保留本表一年，滿後即依規定銷毀。您得以本表之聯絡方式行使查閱、更正等個人資料保護法第3條的當事人權利。如您提供的資料不完整或不確實，將無法通過本次外國學生申請入學報名審查。聯絡方式：彰化市進德路1號，電話：＋886-4-7232105，分機5632~5636，E-mail：admiss@cc2.ncue.edu.tw。<br>
+                            For the purpose of reviewing the applications of international students, the information collected by National Changhua University of Education hereby will only be stored within the University and used for management and contact purposes in the process of application and review. The completed Form will be stored by the University for one year, and then disposed of thereafter. You may exercise the rights of checking and revising the information as prescribed by Article 3 of the Personal Information Protection Act through the contact details provided in this Form. If the information provided by you is incomplete or incorrect, you may not pass the application review for international student admission. Contact details: No. 1, Jin-de Road, Changhua City, Telephone: +886-4-7232105 Extensions 5632 – 5636, Email: admiss@cc2.ncue.edu.tw.</li>
+                        </ol></label></td></tr>
+                    </table>
+                    <br><br>
+                    <button type="submit" style="float:right">送　出<br>Submit</button>　
+                    <button type="reset" style="float:right">清&nbsp&nbsp&nbsp&nbsp除<br>Clear </button>
+                </form>
+    </div>
+</body>
+
+</html>

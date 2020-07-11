@@ -1,0 +1,45 @@
+
+	 
+ body {
+        font-family: "Helvetica Neue", Helvetica, Arial, "微軟正黑體", sans-serif;
+        background-color:#F5F5F5;
+    }
+	#container{
+		width:946px;
+		height:980px;
+		background-color: white; 
+		margin: 0 auto; 
+	}
+	#banner{
+		width:946px;
+		height:256px;
+		margin: 0px;
+		background-image:url("../images/banner.png"); 
+	}
+	#content1{
+		width:100px;
+		height:650px;
+		/*border: 2px solid blue;*/
+		margin: 25px;
+		float: left;
+	}
+	#content3{
+		width:35px;
+		height:650px;
+		margin: 0px;
+		float: left;
+	}
+	#content2{
+		width:725px;
+		height:650px;
+		margin: 15px;
+		float: left;
+	}
+	#footer{
+		width: 946px;
+		height:100px;
+		clear:both;
+		position: relative;
+		margin-top: -40px; /* footer高度的負值 */
+		background-color: #ADD8E6; 
+	}

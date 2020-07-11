@@ -1,0 +1,33 @@
+.error {
+        color: red;
+        font-weight: normal;
+    }
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, "微軟正黑體", sans-serif;
+        background-color:#F5F5F5;
+    }
+    form{
+        width:920px;
+        height:550px;
+    }
+    #container{
+        width:946px;
+        height:3540px;
+        background-color:   white; 
+        margin: 0 auto; 
+    }
+    #banner{
+        width:946px;
+        height:256px;
+        margin: 0px;
+        background-image:url("../images/banner.png"); 
+    }
+    #content1{
+        width:940px;
+        height:550px;
+        /*border: 2px solid blue;*/
+        margin: 10px;
+        float: left;
+        /*padding: 5px;*/
+
+    }
